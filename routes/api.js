@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const Workout = require("../models/activity.js");
 
+router.get("/exercise.html?id=undefined", (req, res) => {
+  res.body;
+});
+
 router.post("/exercise", ({ body }, res) => {
   Workout.create(body)
     .then((dbWorkout) => {
