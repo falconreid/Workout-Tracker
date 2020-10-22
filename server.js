@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const mongojs = require("mongojs");
+const morgan = require("morgan");
 var path = require("path");
 const databaseURL = "Workout";
 const collections = ["exercises"];
@@ -31,7 +32,7 @@ app.get("/stats", (req, res) => {
 });
 
 // routes
-app.use(require("./routes/api.js"));
+app.use("/api", require("./routes/api.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
