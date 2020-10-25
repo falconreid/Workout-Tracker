@@ -8,20 +8,8 @@ const mongojs = require("mongojs");
 // });
 
 // create new workout in db
-router.post("/workout", (req, res) => {
-  Workout.create({
-    type: req.body,
-    // exercises: [
-    //   {
-    //     type: req.body.type,
-    //     name: req.body.name,
-    //     duration: req.body.duration,
-    //     weight: req.body.weight,
-    //     reps: req.body.reps,
-    //     sets: req.body.sets,
-    //   },
-    // ],
-  })
+router.post("/workouts", (req, res) => {
+  Workout.create({})
     .then((exercises) => {
       res.json(exercises);
     })
@@ -31,11 +19,10 @@ router.post("/workout", (req, res) => {
 });
 
 // get a specific workout in db
-router.get("/workout/?id=", (workout, res) => {
-  Workout.findOne({
-    _id: mongojs.ObjectId(workout.id),
-  })
+router.get("/workouts/", (req, res) => {
+  Workout.find({})
     .then((workouts) => {
+      console.log(workouts);
       res.json(workouts);
     })
     .catch((err) => {
@@ -44,11 +31,11 @@ router.get("/workout/?id=", (workout, res) => {
 });
 
 // update a specific workout in db
-router.put("/workout/:id", ({ body, params }, res) => {
+router.put("/workouts/:id", ({ body, params }, res) => {
   Workout.findByIdAndUpdate(
     params.id,
     { $push: { exercises: body } },
-    { new: true, trim: true }
+    { new: true, trim: true, runValidators: true }
   )
     .then((workouts) => {
       res.json(workouts);
@@ -70,7 +57,7 @@ router.get("/workouts/range", (req, res) => {
 });
 
 // delete workout from db
-router.delete("/workout/:id", (req, res) => {
+router.delete("/workouts/:id", (req, res) => {
   Workout.remove(
     {
       _id: mongojs.ObjectID(req.params.id),
