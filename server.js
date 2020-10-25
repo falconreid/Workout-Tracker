@@ -13,7 +13,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(morgan("combined"));
 app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
@@ -24,6 +24,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useUnifiedTopology: true,
 });
 
+app.get("/index", (req, res) => {
+  res.sendFile(path.join(__dirname + "/public/index.html"));
+});
+
 app.get("/exercise", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/exercise.html"));
 });
@@ -32,7 +36,7 @@ app.get("/stats", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/stats.html"));
 });
 
-// routes
+// api routes
 app.use("/api", require("./routes/api.js"));
 
 app.listen(PORT, () => {
