@@ -452,3 +452,8 @@ body {
   object-fit: contain;
   background-position: center;
 }
+
+.container .mt {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+}
