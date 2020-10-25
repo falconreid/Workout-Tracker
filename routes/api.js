@@ -18,11 +18,10 @@ router.post("/workouts", (req, res) => {
     });
 });
 
-// get a specific workout in db
-router.get("/workouts/", (req, res) => {
+// get workouts in db
+router.get("/workouts", (req, res) => {
   Workout.find({})
     .then((workouts) => {
-      console.log(workouts);
       res.json(workouts);
     })
     .catch((err) => {
@@ -35,7 +34,7 @@ router.put("/workouts/:id", ({ body, params }, res) => {
   Workout.findByIdAndUpdate(
     params.id,
     { $push: { exercises: body } },
-    { new: true, trim: true, runValidators: true }
+    { new: true, runValidators: true }
   )
     .then((workouts) => {
       res.json(workouts);
