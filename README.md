@@ -32,3 +32,10 @@ A consumer will reach their fitness goals more quickly when they track their wor
 ## Deployed
 
 [Deployed on Heroku] (https://still-wildwood-87381.herokuapp.com/)
+
+## Screen Shots
+
+![] (./public/img/FitBytes_0000_Layer 1.jpg)
+![] (./public/img/FitBytes_0000_Layer 2.jpg)
+![] (./public/img/FitBytes_0000_Layer 3.jpg)
+![] (./public/img/FitBytes_0000_Layer 4.jpg)
