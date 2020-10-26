@@ -35,7 +35,7 @@ A consumer will reach their fitness goals more quickly when they track their wor
 
 ## Screen Shots
 
-![] (./public/img/FitBytes_0000_Layer 1.jpg)
-![] (./public/img/FitBytes_0000_Layer 2.jpg)
-![] (./public/img/FitBytes_0000_Layer 3.jpg)
-![] (./public/img/FitBytes_0000_Layer 4.jpg)
+- ![1](https://user-images.githubusercontent.com/5247408/97123870-65759200-16f3-11eb-8e7c-70a08d4ac809.jpg)
+- ![2](https://user-images.githubusercontent.com/5247408/97123869-64dcfb80-16f3-11eb-9416-69d103e8710a.jpg)
+- ![3](https://user-images.githubusercontent.com/5247408/97123868-64dcfb80-16f3-11eb-858a-2b5278dfd59e.jpg)
+- ![4](https://user-images.githubusercontent.com/5247408/97123866-64446500-16f3-11eb-8764-1eb1bbbd18ae.jpg)
