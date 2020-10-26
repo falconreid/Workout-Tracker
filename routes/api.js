@@ -2,11 +2,6 @@ const router = require("express").Router();
 const Workout = require("../models/index.js");
 const mongojs = require("mongojs");
 
-// not sure if I need this??
-// router.get("/exercise?", (req, res) => {
-//   res.send({ type: "GET" });
-// });
-
 // create new workout in db
 router.post("/workouts", (req, res) => {
   Workout.create({})
@@ -18,7 +13,7 @@ router.post("/workouts", (req, res) => {
     });
 });
 
-// get workouts in db
+// get workouts from db
 router.get("/workouts", (req, res) => {
   Workout.find({})
     .then((workouts) => {
@@ -44,7 +39,7 @@ router.put("/workouts/:id", ({ body, params }, res) => {
     });
 });
 
-// get all workouts from db
+// get all workouts from db (limit to last 7)
 router.get("/workouts/range", (req, res) => {
   Workout.find({}, (error, data) => {
     if (error) {
